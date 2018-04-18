@@ -1,0 +1,146 @@
+@import "compass";
+@import url(https://fonts.googleapis.com/css?family=Abel);
+// font-family
+$baseFontFamily :"游ゴシック", YuGothic, "メイリオ",Verdana, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+// colors
+$baseColor: #f5f5dc;
+$subColor: #ffffff;
+$keyColor: #000000;
+$fontColor: #000000;
+
+/* Base
+------------------------------------------------------------*/
+html{ font-size: 62.5%; }
+
+body{
+  color: $fontColor;
+  font-size: 1.4rem;
+  font-family:$baseFontFamily;
+  line-height:1.6;
+  letter-spacing: 0.1em;
+  background-color: $baseColor;
+}
+
+a {
+  @include link-colors($keyColor, darken($subColor, 10%), lighten($subColor, 5%), darken($subColor, 10%));
+  text-decoration: none;
+}
+
+
+/* Align
+------------------------------------------------------------*/
+.text-center {
+  text-align: center;
+}
+
+/* Layout
+------------------------------------------------------------*/
+.block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Font
+------------------------------------------------------------*/
+.abel {
+  font-family: 'Abel', sans-serif;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* Header
+------------------------------------------------------------*/
+.box {
+  background-image: url("../images/AMEMAN130019_TP_V.jpg");
+  // background-image: url("../images/xxxx..jpg");
+  height: 500px;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+// desktop
+@media (max-width: 768px) {
+  .box {
+    height: 250px;
+  }
+}
+
+
+/* Contents
+------------------------------------------------------------*/
+// Common Styles
+section {
+  padding: 60px 0;
+  .container {
+    width: 90%;
+    @extend .block-center;
+  }
+  h2 {
+    @extend .abel;
+    font-size: 3.2rem;
+  }
+}
+
+// textbox
+#textbox {
+  background-color: $subColor;
+  .container {
+  display: flex;
+  flex-direction: row;/*横並び*/
+  
+ }
+
+  @media (max-width: 768px) {
+  .container {
+    flex-direction: column;/*縦並び*/
+    
+  }
+}
+
+  h2 {
+    color: $keyColor;
+    margin-bottom: 60px;
+  }
+  .textdetail {
+    @include flex(1);
+    margin: 10px 10px;
+    background-color: $baseColor;
+    @include border-radius(4px);
+    @include box-sizing(border-box);
+
+  }
+  h3 {
+    @extend .abel;
+    color: $subColor;
+    background-color: $keyColor;
+    margin-bottom:10px;
+    font-size: 2.4rem;
+  }
+}
+
+
+p {
+      padding: 10px ;
+    }
+
+
+footer {
+  background:$baseColor;
+  padding:30px;
+  
+  
+  a{
+    color: $subColor;
+    background-color: $keyColor;
+    width:30%;
+    padding: 10px 0;
+    margin: 20px;
+    display:block;
+    border-radius: 5px;
+  }
+  
+}
